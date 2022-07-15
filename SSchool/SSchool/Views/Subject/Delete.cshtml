@@ -1,0 +1,24 @@
+﻿@model Subject
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+
+
+<div class="card" style="width:400px">
+  
+
+    <h2 class="card-title"> Subject Name: @Model.Name</h2>
+     
+     <h4 class="card-text"> Degree: @Model.Degree</h4>
+     
+     <h4 class="card-text">MinDegree: @Model.MinDegree</h4>
+
+    
+
+
+  <a asp-controller="Subject" asp-action="ConfrimDelete" asp-route-id="@Model.Id" class="btn btn-danger">ConfrimDelete </a>
+     <a href="/Subject/Index" class="btn btn-primary">Back To List</a>
+

@@ -1,0 +1,41 @@
+﻿@model Subject
+
+@{
+//    Layout = "_Layout";
+    ViewData["Title"] = "Edit";
+    SelectList levelItems = 
+            new SelectList(ViewBag.LevelList,"Id","Name");
+}
+
+<h1>Edit</h1>
+<form method="post" asp-action="SaveEdit" asp-controller="Subject" asp-route-id="@Model.Id">
+    <div asp-validation-summary="All" class="text-danger"></div>     
+     
+     <div>
+     
+       <label asp-for="Name"></label>
+       <input asp-for="Name" class="form-control" />
+       
+    </div>
+  <div>
+        <label asp-for="Degree"></label>
+        <input asp-for="Degree" class="form-control" />
+        <span asp-validation-for="Degree" class="text-danger"></span>
+    </div>
+  <div>
+        <label asp-for="MinDegree"></label>
+        <input asp-for="MinDegree" class="form-control" />
+        <span asp-validation-for="MinDegree" class="text-danger"></span>
+        
+   
+    </div>
+    <div>
+        <label asp-for="level_id"></label>
+        <select asp-items="levelItems" asp-for="level_id"  class="form-control">
+         @*   //<option value="0" >-- Select Department --</option>*@
+        </select>
+        <span asp-validation-for="level_id" class="text-danger"></span>
+    </div>
+    <input type="submit" value="Create" class="btn btn-success" />
+</form>
+

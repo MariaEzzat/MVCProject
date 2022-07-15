@@ -1,0 +1,31 @@
+﻿@model Subject
+
+
+<div class="card" style="width:400px">
+  
+
+    <h2 class="card-title"> Subject Name: @Model.Name</h2>
+    <hr />
+     
+     <h4 class="card-text"> Degree: @Model.Degree</h4>
+     <hr />
+
+     
+     <h4 class="card-text">MinDegree: @Model.MinDegree</h4>
+
+    
+<hr/>
+
+   
+
+  @*  <a href="/Subject/Delete/@Model.Id" class="btn btn-success">Delete</a>*@
+    <hr />
+
+
+     <a href="/Subject/Index" class="btn btn-primary">Back To List</a>
+
+
+   
+  </div>
+
+

@@ -1,0 +1,115 @@
+﻿@model List<Level>
+@{
+    ViewData["Title"] = "Index";
+   Layout = "_ttLayout";
+}
+
+
+<h1>Levels Data </h1>
+
+<h3>Student</h3>
+<table class="table">
+    <thead class="table-dark">
+       <tr>       
+         <th scope="col">ID</th>
+         <th scope="col">Name</th>
+         
+         <th scope="col">Students</th>
+        
+        
+
+       </tr>
+    </thead>
+    
+    @foreach (var item in  ViewBag.levelStud )
+    {
+        <tbody>
+         <tr>
+            <td><h4>@item.Id</h4></td>
+            <td><h4>@item.Name</h4></td>
+            <td>
+                <table>
+                      <thead>
+                        <tr>
+                            <td><h4>Studnt Name</h4></td>
+
+                        </tr>
+                    </thead>
+                @foreach(var tt in @item.Students)
+                {
+                  <tbody>
+         <tr><td>@tt.Name</td>
+             <td><a href="/Student/Details/@tt.Id" class="btn btn-success">Details</a></td>
+             </tr>
+
+                   </tbody>
+                        
+                    }
+                    </table>
+                    </td>
+                   
+            
+         </tr>
+       </tbody>
+    }
+</table>
+<hr />
+
+<a asp-controller="Student" asp-action="Index"  class="btn btn-primary">Student List</a>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br/>
+
+
+<h3>Subject</h3>
+
+<table class="table">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+
+            <th scope="col">Subject</th>
+
+
+        </tr>
+    </thead>
+
+    @foreach (var item in  ViewBag.levelsubj)
+    {
+        <tbody>
+            <tr>
+                <td><h4>@item.Id</h4></td>
+                <td><h4>@item.Name</h4></td>
+                <td>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td><h4>Subject Name</h4></td>
+
+                            </tr>
+                        </thead>
+                        @foreach (var tt in @item.subjects)
+                        {
+                            <tbody>
+                                <tr>
+                                    <td>@tt.Name</td>
+                                    <td><a href="/Subject/Details/@tt.Id" class="btn btn-success">Details</a></td>
+                                </tr>
+
+                            </tbody>
+
+                        }
+                    </table>
+                </td>
+
+            </tr>
+        </tbody>
+    }
+</table>
+<hr />
+<a asp-controller="Subject" asp-action="Index"  class="btn btn-primary"> Subject List</a>

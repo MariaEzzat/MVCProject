@@ -1,0 +1,28 @@
+﻿@model Student
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<div class="card" style="width:400px">
+  <img class="card-img-top" src="/Images/@Model.Image" alt="Card image">
+  <div class="card-body">
+
+     <h2 class="card-title"> Name: @Model.Name</h2>
+     
+     <h4 class="card-text"> ID: @Model.Id</h4>
+     
+     <h4 class="card-text">Age: @Model.Age</h4>
+
+     <h4 class="card-text"> Address: @Model.Address</h4>
+  
+     <h4 class="card-text">Grade: @Model.Grade</h4>
+
+     <a href="/Student/ConfrimDelete/@Model.Id" class="btn btn-success">ConfrimDelete</a>
+
+     <a href="/Student/Index" class="btn btn-primary">Back To List</a> 
+  </div>
+</div>
+
+

@@ -1,0 +1,41 @@
+﻿@model List<TeachLevel>
+@{
+    ViewData["Title"] = "Index";
+     Layout = "_MyLayout";
+}
+
+<h1>Teacher Data</h1>
+
+@*<a asp-controller="Subject" asp-action="New"  class="btn btn-primary">New Subject</a>
+
+*@
+<table class="table table-bordered">
+     <tr>
+        
+        <th> Name</th>
+        <th>Image</th>
+        <th>Position</th>
+        <th>Level Name</th>
+       
+
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.teacher.Name</td>
+             <td>@item.teacher.Image</td>
+              <td>@item.teacher.Position</td>
+            <td>@item.level.Name</td>
+           
+            <td><a href="/Teacher/Edit/@item.Id"  class="btn btn-primary">Edit</a></td>
+         @*   <td><a href="/Subject/Delete/@item.Id"  class="btn btn-danger">Delete</a></td>*@
+             <td><a href="/Teacher/Details/@item.Id"  class="btn btn-primary">Details</a></td>
+        </tr>
+    }
+</table>
+<br />
+<br />
+<a asp-controller="Level" asp-action="Index"  class="btn btn-primary">Level List</a>
+<a asp-controller="Subject" asp-action="Index"  class="btn btn-primary">Subject List</a>
+
